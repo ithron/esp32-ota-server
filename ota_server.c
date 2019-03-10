@@ -134,5 +134,6 @@ void ota_server_start()
     ESP_LOGI(TAG, "Next boot partition subtype %d at offset 0x%x",
     	boot_partition->subtype, boot_partition->address);
     ESP_LOGI(TAG, "Prepare to restart system!");
+  vTaskDelay(2000 / portTICK_PERIOD_MS);
     esp_restart();
 }
